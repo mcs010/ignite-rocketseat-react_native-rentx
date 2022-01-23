@@ -8,4 +8,7 @@ export const Container = styled.View`
     background-color: ${({ theme }) => theme.colors.background_primary};
 `;
 
-export const Title = styled.Text``;
+export const Header = styled.View`
+    font-size: 30px;
+    font-family: ${({ theme }) => theme.fonts.secondary_600}
+`;
