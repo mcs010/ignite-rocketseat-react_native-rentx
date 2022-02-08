@@ -1,4 +1,7 @@
 import React from 'react';
+import { Feather } from '@expo/vector-icons';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { useTheme } from 'styled-components/native';
 
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
@@ -25,11 +28,23 @@ import {
     Period,
     Price,
     Acessories,
-    About,
+    RentalPeriod,
+    CalendarIcon,
+    DateInfo,
+    DateTitle,
+    DateValue,
+    RentalPrice,
+    RentalPriceLabel,
+    RentalPriceDetails,
+    RentalPriceQuota,
+    RentalPriceTotal,
     Footer,
 } from './styles';
 
-export function CarDetails(){
+export function SchedulingDetails(){
+
+    const theme = useTheme();
+
     return (
         <Container>
 
@@ -57,18 +72,47 @@ export function CarDetails(){
                 </Details>
 
                 <Acessories>
-                    <Acessory name='380Km/h' icon={speedSvg} />
+                    <Acessory name='380 Km/h' icon={speedSvg} />
                     <Acessory name='3.2' icon={accelerationSvg} />
                     <Acessory name='800 HP' icon={forceSvg} />
-                    <Acessory name='Gas' icon={gasolineSvg} />
-                    <Acessory name='Auto' icon={gearboxSvg} />
+                    <Acessory name='Gasoline' icon={gasolineSvg} />
+                    <Acessory name='Automatic' icon={gearboxSvg} />
                     <Acessory name='2 people' icon={peopleSvg} />
                 </Acessories>
                 
-                <About>
-                    This is an sports vehicle. Came out from the legendary fighting bull pardoned in the Real 
-                    Maestranza square in Seville. It is a stunning car for who loves to accelerate.
-                </About>
+                <RentalPeriod>
+                    <CalendarIcon>
+                        <Feather 
+                            name='calendar'
+                            size={RFValue(24)}
+                            color={theme.colors.shape}
+                        />
+                    </CalendarIcon>
+
+                    <DateInfo>
+                        <DateTitle>FROM</DateTitle>
+                        <DateValue>18/06/2021</DateValue>
+                    </DateInfo>
+
+                    <Feather 
+                        name='chevron-right'
+                        size={RFValue(10)}
+                        color={theme.colors.text}
+                    />
+
+                    <DateInfo>
+                        <DateTitle>UNTIL</DateTitle>
+                        <DateValue>18/06/2021</DateValue>
+                    </DateInfo>
+                </RentalPeriod>
+
+                <RentalPrice>
+                    <RentalPriceLabel>TOTAL</RentalPriceLabel>
+                    <RentalPriceDetails>
+                        <RentalPriceQuota>R$ 580 x3 daily</RentalPriceQuota>
+                        <RentalPriceTotal>R$ 2,900</RentalPriceTotal>
+                    </RentalPriceDetails>
+                </RentalPrice>
             </Content>
 
             <Footer>

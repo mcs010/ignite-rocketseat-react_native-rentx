@@ -20,7 +20,7 @@ export function Home(){
         brand: "Audi",
         name: "RS 5 Coupé",
         rent: {
-            period: "Ao Dia",
+            period: "Per day",
             price: 120,
         },
         thumbnail: "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b-700x465.png",
@@ -41,7 +41,7 @@ export function Home(){
                     />
 
                     <TotalCars>
-                        Total de 12 carros
+                        Total of 12 cars
                     </TotalCars>
                 </HeaderContent>
             </Header>
